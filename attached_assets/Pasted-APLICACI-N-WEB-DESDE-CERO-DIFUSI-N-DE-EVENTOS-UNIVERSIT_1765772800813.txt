@@ -1,0 +1,266 @@
+APLICACIÓN WEB DESDE CERO – DIFUSIÓN DE EVENTOS UNIVERSITARIOS (TESIS)
+
+Contexto
+
+Crea una aplicación web completa desde cero como prototipo funcional para una tesis universitaria.
+El objetivo del sistema es mejorar la difusión de eventos universitarios mediante la centralización de la información y una interfaz limpia, reduciendo el ruido digital.
+
+A diferencia de un MVP mínimo, este prototipo sí incluye interacción social controlada, pero manteniendo el enfoque académico y evitando saturación visual.
+
+🧠 OBJETIVO GENERAL DEL SISTEMA
+
+Centralizar eventos académicos, culturales y deportivos
+
+Permitir interacción entre estudiantes de forma moderada
+
+Registrar métricas cuantificables para análisis estadístico
+
+Mantener una interfaz clara, sin publicidad ni contenido externo
+
+🧩 MÓDULOS PRINCIPALES
+
+La aplicación tendrá tres vistas principales:
+
+Vista Pública (sin login)
+
+Vista Estudiante (con login)
+
+Vista Administrativa (FIMAZ)
+
+👨‍🎓 VISTA PÚBLICA (SIN LOGIN)
+Funcionalidades:
+
+Feed cronológico de eventos
+
+Filtro por categoría:
+
+Académico
+
+Cultural
+
+Deportivo
+
+Visualización básica de eventos
+
+Acceso solo lectura
+
+👤 VISTA ESTUDIANTE (CON LOGIN)
+Funcionalidades:
+🔹 Eventos
+
+Ver detalle completo del evento
+
+Botón “Asistiré”
+
+Contador de asistentes
+
+Historial de eventos pasados y futuros
+
+🔹 Interacción social
+
+Likes en eventos
+
+Comentarios por evento
+
+Sistema de seguidores (seguir otros estudiantes)
+
+Chat interno entre estudiantes (uno a uno o por evento)
+
+🔹 Notificaciones
+
+Notificación cuando:
+
+Un evento que sigues se actualiza
+
+Alguien comenta un evento que sigues
+
+Un usuario te sigue
+
+Notificaciones internas (no push externas en esta fase)
+
+🛠️ VISTA ADMINISTRATIVA (FIMAZ)
+1️⃣ Autenticación
+
+Login seguro para administradores
+
+2️⃣ Gestión de eventos
+
+Crear
+
+Editar
+
+Eliminar
+
+Archivar eventos (para historial)
+
+Campos:
+
+Título
+
+Descripción
+
+Categoría
+
+Fecha y hora
+
+Lugar
+
+Imagen
+
+3️⃣ Moderación
+
+Eliminar comentarios
+
+Bloquear usuarios si es necesario
+
+4️⃣ Dashboard de métricas
+
+Mostrar:
+
+Visitas totales
+
+Likes por evento
+
+Comentarios por evento
+
+Asistencias
+
+Eventos con mayor interacción
+
+🗂️ HISTORIAL DE EVENTOS
+
+Separar claramente:
+
+Eventos futuros
+
+Eventos pasados
+
+Eventos pasados permanecen visibles como repositorio institucional
+
+Mantienen métricas y comentarios
+
+🧠 ARQUITECTURA TÉCNICA OBLIGATORIA
+Frontend
+
+Next.js o React
+
+TypeScript
+
+Diseño Mobile First
+
+Interfaz limpia y académica
+
+Backend
+
+Node.js + Express
+
+TypeScript
+
+API REST
+
+Base de datos
+
+MySQL
+
+Tablas sugeridas:
+Eventos (
+  id,
+  titulo,
+  descripcion,
+  fecha_evento,
+  categoria,
+  lugar,
+  imagen,
+  vistas,
+  asistencias
+)
+
+Usuarios (
+  id,
+  nombre,
+  email,
+  password_hash
+)
+
+Admins (
+  id,
+  usuario,
+  password_hash
+)
+
+Comentarios (
+  id,
+  evento_id,
+  usuario_id,
+  contenido,
+  fecha
+)
+
+Likes (
+  id,
+  evento_id,
+  usuario_id
+)
+
+Seguidores (
+  seguidor_id,
+  seguido_id
+)
+
+Chats (
+  id,
+  usuario1_id,
+  usuario2_id
+)
+
+Mensajes (
+  id,
+  chat_id,
+  usuario_id,
+  contenido,
+  fecha
+)
+
+Notificaciones (
+  id,
+  usuario_id,
+  tipo,
+  referencia_id,
+  leida
+)
+
+📊 MÉTRICAS Y REGISTROS
+
+Registrar:
+
+Visitas
+
+Interacciones
+
+Actividad por usuario
+
+Estas métricas serán usadas para análisis estadístico en la tesis
+
+⚠️ REGLAS IMPORTANTES
+
+No incluir publicidad
+
+No incluir contenido político o externo
+
+Priorizar claridad sobre estética llamativa
+
+Código modular, comentado y escalable
+
+Incluir instrucciones para correr el proyecto en Replit
+
+🚀 RESULTADO ESPERADO
+
+App funcional end-to-end
+
+Backend y frontend conectados
+
+Base de datos lista
+
+Interfaz usable en móvil
+
+Sistema estable para pruebas reales con estudiantes
